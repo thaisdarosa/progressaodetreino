@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Treinos</title>
+    <link rel="stylesheet" href="style.css.css">
+    <script src="javaScript.js" defer></script>
+</head>
+<body>
+    <h1>Registre sua progressão de treino</h1>
+
+    <!-- CARD 1: REGISTRAR TREINO REAL (USANDO TEMPLATE OU MANUAL) -->
+    <div class="card-treino">
+        <h2>O que você vai fazer hoje?</h2>
+        
+        <div class="area-carregar-template">
+            <label>Carregar série salva:</label>
+            <select id="selectTemplate">
+                <option value="">-- Selecione uma série --</option>
+            </select>
+            <button id="btnCarregarTemplate">Carregar</button>
+        </div>
+        
+        <hr>
+        
+        <div id="areaExerciciosDinamicos">
+            <p>Selecione uma série acima ou preencha manualmente abaixo.</p>
+        </div>
+        
+        <div id="areaManual">
+            <h3>Ou preencha manualmente:</h3>
+            <div class="linha-manual">
+                <label>Exercício:</label>
+                <input type="text" id="manualExercicio" placeholder="Ex: Supino">
+                <label>Peso (kg):</label>
+                <input type="number" id="manualPeso" placeholder="50">
+                <label>Repetições:</label>
+                <input type="number" id="manualRep" placeholder="12">
+                <button id="btnAdicionarManual">Adicionar</button>
+            </div>
+        </div>
+        
+        <div id="listaExerciciosDoDia">
+            <h3>Exercícios do treino de hoje:</h3>
+            <div id="itensDoDia"></div>
+        </div>
+        
+        <div class="campos-gerais">
+            <label>Data do treino:</label>
+            <input type="date" id="dataTreino">
+            
+            <label>Tempo total (min):</label>
+            <input type="number" id="tempoTreino" placeholder="60">
+            
+            <button id="btnFinalizarTreino">✅ Feito</button>
+        </div>
+    </div>
+
+    <!-- CARD 2: CADASTRAR SÉRIE (CRIAR TEMPLATE) -->
+    <div class="card-cadastro">
+        <h3>Registre uma nova série</h3>
+        <p>Deixe registrado os treinos repetidos.</p>
+        <button id="btnMostrarCadastroSerie">➕ Cadastrar Série</button>
+        <div id="areaCadastroSerie" class="area-oculta">
+            <label>Nome da série:</label>
+            <input type="text" id="nomeSerie" placeholder="Ex: Treino Segunda">
+            <br><br>
+            
+            <label>Selecione os exercícios:</label>
+            <div id="listaCheckboxesExercicios">
+                <!-- Checkboxes aparecem aqui -->
+            </div>
+            <br>
+            
+            <button id="btnSalvarTemplate">Salvar Série</button>
+        </div>
+    </div>
+
+    <!-- CARD 3: CADASTRAR EXERCÍCIO (BASE) -->
+    <div class="card-cadastro">
+        <h3>Registre um novo exercício</h3>
+        <p>Adicione exercícios à sua lista.</p>
+        <button id="btnMostrarCadastroExercicio">➕ Cadastrar Exercício</button>
+        <div id="areaCadastroExercicio" class="area-oculta">
+            <label>Nome do Exercício:</label>
+            <input type="text" id="exercicioNome" placeholder="Ex: Supino, Agachamento...">
+            <br><br>
+            <button id="btnSalvarExercicio">Salvar Exercício</button>
+        </div>
+    </div>
+
+    <!-- CARD 4: RELATÓRIO -->
+    <div class="card-relatorio">
+        <h2>Relatório de Progressão </h2>
+        <p>Clique no botão para visualizar sua evolução de carga.</p>
+        <button id="btnGerarRelatorio">📊 Gerar Relatório</button>
+        <div id="areaRelatorio">
+         
+        </div>
+    </div>
+
+</body>
+</html>
